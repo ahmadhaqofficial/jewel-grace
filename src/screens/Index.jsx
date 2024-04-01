@@ -1,4 +1,5 @@
 import React, { useLayoutEffect } from "react";
+import { Slider } from "@components";
 import { Cards } from "@components";
 
 export default function Index() {
@@ -166,6 +167,7 @@ export default function Index() {
             </div>
           ) : null}
         </div>
+        <Slider />
         <Cards />
       </div>
     </>
