@@ -6,9 +6,8 @@ import React, { useState } from "react";
 import { PngHeader1 } from "@assets";
 import { PngHeader2 } from "@assets";
 import { PngHeader3 } from "@assets";
-import { Cards } from "@components";
 
-export default function Slider() {
+export default function Slider({ selectedNav, setSelectedNav }) {
   const navList = [
     { name: "Earings" },
     { name: "Rings" },
@@ -18,9 +17,10 @@ export default function Slider() {
     { name: "Sets" },
     { name: "Mens" },
     { name: "Religious Pendants" },
+    { name: "Ethnic Jewellery" },
+    { name: "Bridal Clutches" },
   ];
-  const [selectedNav, setSelectedNav] = useState(null);
-  console.log("selectedNav", selectedNav);
+
   return (
     <>
       <Swiper
@@ -29,7 +29,7 @@ export default function Slider() {
         slidesPerView={1}
         loop={true}
         autoplay={{
-          delay: 2500,
+          delay: 3500,
           disableOnInteraction: false,
         }}
         onSwiper={(swiper) => console.log(swiper)}
@@ -108,8 +108,6 @@ export default function Slider() {
           ))}
         </div>
       </div>
-      <Cards />
-      <Cards />
     </>
   );
 }

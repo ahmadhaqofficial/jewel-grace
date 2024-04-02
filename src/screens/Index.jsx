@@ -1,10 +1,12 @@
-import React, { useLayoutEffect } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import { Slider } from "@components";
 import { Cards } from "@components";
+import { Footer } from "@components";
 
 export default function Index() {
-  const [isOpen, setIsOpen] = React.useState(true);
-  const [isScrolling, setIsScrolling] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(true);
+  const [isScrolling, setIsScrolling] = useState(false);
+  const [selectedNav, setSelectedNav] = useState(null);
   function checkNavOpenClose() {
     if (window.innerWidth < 900) {
       setIsOpen(false);
@@ -167,8 +169,9 @@ export default function Index() {
             </div>
           ) : null}
         </div>
-        <Slider />
-        <Cards />
+        <Slider selectedNav={selectedNav} setSelectedNav={setSelectedNav} />
+        <Cards selectedNav={selectedNav} />
+        <Footer />
       </div>
     </>
   );
